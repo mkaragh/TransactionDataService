@@ -1,0 +1,40 @@
+apiVersion: apps/v1beta1
+kind: Deployment
+metadata:
+  name: transactiondataservice
+spec:
+  selector:
+    matchLabels:
+      app: transactiondataservice
+  replicas: 1 # tells deployment to run 1 pods matching the template
+  template: # create pods using pod definition in this template
+    metadata:
+      labels:
+        app: transactiondataservice
+    spec:
+      containers:
+      - name: transactiondataservice
+        image: mkadocker/transactiondataservice
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 8080
+          name: server
+        - containerPort: 8081
+          name: management
+        env:
+        - name: NGOI_DATABASE
+          valueFrom:
+            configMapKeyRef:
+              name: transactiondataservice
+              key: database-name
+        - name: NGOI_DB_USERNAME
+          valueFrom:
+            secretKeyRef:
+              name: transactiondataservice
+              key: database-user
+        - name: NGOI_DB_PASSWORD
+          valueFrom:
+            secretKeyRef:
+              name: transactiondataservice
+              key: database-password
+        
