@@ -32,7 +32,8 @@
 		
 		<dependency>
 			<groupId>mysql</groupId>
-			<artifactId>mysql-connector-java</artifactId>							
+			<artifactId>mysql-connector-java</artifactId>
+			<scope>runtime</scope>							
 		</dependency>
 		
 		<dependency>
@@ -52,6 +53,13 @@
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
+				<configuration>
+	            <environmentVariables>
+	                <NGOI_DATABASE>ngoi57.mysql.database.azure.com:3306</NGOI_DATABASE>
+	                <NGOI_DB_PASSWORD>Mkara123!</NGOI_DB_PASSWORD>	               
+	                <NGOI_DB_USERNAME>ngoi@ngoi57</NGOI_DB_USERNAME>
+	            </environmentVariables>
+        		</configuration>
 			</plugin>
 		</plugins>
 	</build>

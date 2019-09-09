@@ -1,6 +1,0 @@
-apiVersion: v1
-kind: ConfigMap
-metadata:
-  name: transactiondataservice
-data:
-  database-name: ngoi.mysql.database.azure.com:3306
