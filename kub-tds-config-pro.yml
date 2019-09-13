@@ -3,4 +3,4 @@ kind: ConfigMap
 metadata:
   name: transactiondataservice
 data:
-  database-name: ngoi57.mysql.database.azure.com:3306/ngoi?useSSL=false&serverTimezone=UTC
+  database-name: ngoi57.mysql.database.azure.com:3306
