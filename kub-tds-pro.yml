@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: transactiondataservice
-        image: mkadocker/transactiondataservice
+        image: mkadocker/transactiondataservice:BUILD_ID_PLACEHOLDER
         imagePullPolicy: Always
         ports:
         - containerPort: 8086
